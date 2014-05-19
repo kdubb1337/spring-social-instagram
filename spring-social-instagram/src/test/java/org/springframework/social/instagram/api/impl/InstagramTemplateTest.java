@@ -19,7 +19,7 @@ public class InstagramTemplateTest extends AbstractInstagramApiTest {
 		
 		server.expect(requestTo("https://api.instagram.com/v1/users/self/?client_id=CLIENT_ID"))
 			.andExpect(method(GET))
-			.andRespond(withSuccess().body(new ClassPathResource("testdata/error-response.json", getClass())).headers(responseHeaders));
+			.andRespond(withSuccess().body(new ClassPathResource("src/test/resources/testdata/error-response.json", getClass())).headers(responseHeaders));
 		
 		template.userOperations().getUser();
 		mockServer.verify();
