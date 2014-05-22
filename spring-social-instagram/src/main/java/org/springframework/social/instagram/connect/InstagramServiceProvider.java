@@ -16,5 +16,4 @@ public class InstagramServiceProvider extends AbstractOAuth2ServiceProvider<Inst
 	public Instagram getApi(String accessToken) {
 		return new InstagramTemplate(clientId, accessToken);
 	}
-
 }

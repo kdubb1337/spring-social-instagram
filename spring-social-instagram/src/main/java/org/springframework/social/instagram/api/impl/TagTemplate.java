@@ -1,13 +1,13 @@
 package org.springframework.social.instagram.api.impl;
 
-import org.springframework.social.instagram.api.PagedMediaList;
-import org.springframework.social.instagram.api.Tag;
-import org.springframework.social.instagram.api.TagOperations;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.social.instagram.api.PagedMediaList;
+import org.springframework.social.instagram.api.Tag;
+import org.springframework.social.instagram.api.TagOperations;
 
 /**
  * Implementation of {@link TagOperations}, providing a binding to Instagram's tag-oriented REST resources.

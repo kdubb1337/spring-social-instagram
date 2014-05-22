@@ -1,5 +1,10 @@
 package org.springframework.social.instagram.api.impl;
 
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.social.instagram.api.InstagramProfile;
 import org.springframework.social.instagram.api.PagedMediaList;
 import org.springframework.social.instagram.api.Relationship;
@@ -7,16 +12,11 @@ import org.springframework.social.instagram.api.UserOperations;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 /**
  * Implementation of {@link UserOperations}, providing a binding to Instagram's user-oriented REST resources.
  */
 public class UserTemplate extends AbstractInstagramOperations implements UserOperations {
-	
+
 	public UserTemplate(InstagramTemplate instagram, boolean isAuthorizedForUser) {
 		super(instagram, isAuthorizedForUser);
 	}
@@ -33,12 +33,14 @@ public class UserTemplate extends AbstractInstagramOperations implements UserOpe
 	public PagedMediaList getFeed() {
 		return getFeed(null, null);
 	}
-	
+
 	public PagedMediaList getFeed(String maxId, String minId) {
 		requireUserAuthorization();
-		Map<String,String> params = new HashMap<String, String>();
-		if(maxId != null) params.put("max_id", maxId);
-		if(minId != null) params.put("min_id", minId);
+		Map<String, String> params = new HashMap<String, String>();
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minId != null)
+			params.put("min_id", minId);
 		return get(buildUri(USERS_ENDPOINT + "self/feed/", params), PagedMediaList.class);
 	}
 
@@ -47,11 +49,15 @@ public class UserTemplate extends AbstractInstagramOperations implements UserOpe
 	}
 
 	public PagedMediaList getRecentMedia(String userId, String maxId, String minId, long minTimestamp, long maxTimestamp) {
-		Map<String,String> params = new HashMap<String, String>();
-		if(maxId != null) params.put("max_id", maxId);
-		if(maxId != null) params.put("max_id", maxId);
-		if(minTimestamp > 0) params.put("min_timestamp", Long.toString(minTimestamp));
-		if(maxTimestamp > 0) params.put("max_timestamp", Long.toString(maxTimestamp));
+		Map<String, String> params = new HashMap<String, String>();
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (maxId != null)
+			params.put("max_id", maxId);
+		if (minTimestamp > 0)
+			params.put("min_timestamp", Long.toString(minTimestamp));
+		if (maxTimestamp > 0)
+			params.put("max_timestamp", Long.toString(maxTimestamp));
 		return get(buildUri(USERS_ENDPOINT + userId + "/media/recent/", params), PagedMediaList.class);
 	}
 
@@ -100,14 +106,11 @@ public class UserTemplate extends AbstractInstagramOperations implements UserOpe
 	public void denyUser(String userId) {
 		modifyRelationship(userId, "deny");
 	}
-	
+
 	private void modifyRelationship(String userId, String action) {
 		requireUserAuthorization();
-		MultiValueMap<String,String> params = new LinkedMultiValueMap<String, String>();
+		MultiValueMap<String, String> params = new LinkedMultiValueMap<String, String>();
 		params.add("action", action);
 		post(buildUri(USERS_ENDPOINT + userId + "/relationship/"), params, Map.class);
 	}
-	
-	
-	
 }

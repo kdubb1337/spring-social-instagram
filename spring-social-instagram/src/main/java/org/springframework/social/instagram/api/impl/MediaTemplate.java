@@ -1,15 +1,15 @@
 package org.springframework.social.instagram.api.impl;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.social.instagram.api.Comment;
 import org.springframework.social.instagram.api.InstagramProfile;
 import org.springframework.social.instagram.api.Media;
 import org.springframework.social.instagram.api.MediaOperations;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Implementation of {@link MediaOperations}, providing a binding to Instagram's media-oriented REST resources.

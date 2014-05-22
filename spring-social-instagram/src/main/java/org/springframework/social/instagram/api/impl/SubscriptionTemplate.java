@@ -1,5 +1,8 @@
 package org.springframework.social.instagram.api.impl;
 
+import java.net.URI;
+import java.util.List;
+
 import org.springframework.social.instagram.api.Aspect;
 import org.springframework.social.instagram.api.Subscription;
 import org.springframework.social.instagram.api.SubscriptionObject;
@@ -7,9 +10,6 @@ import org.springframework.social.instagram.api.SubscriptionOperations;
 import org.springframework.social.support.URIBuilder;
 import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
-
-import java.net.URI;
-import java.util.List;
 
 public class SubscriptionTemplate extends AbstractInstagramOperations implements SubscriptionOperations {
 

@@ -1,13 +1,13 @@
 package org.springframework.social.instagram.api.impl;
 
-import org.springframework.social.instagram.api.Location;
-import org.springframework.social.instagram.api.LocationOperations;
-import org.springframework.social.instagram.api.PagedMediaList;
-
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.social.instagram.api.Location;
+import org.springframework.social.instagram.api.LocationOperations;
+import org.springframework.social.instagram.api.PagedMediaList;
 
 /**
  * Implementation of {@link LocationOperations}, providing a binding to Instagram's location-oriented REST resources.

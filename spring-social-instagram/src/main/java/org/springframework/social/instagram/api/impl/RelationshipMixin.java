@@ -1,5 +1,10 @@
 package org.springframework.social.instagram.api.impl;
 
+import java.io.IOException;
+
+import org.springframework.social.instagram.api.Relationship.IncomingStatus;
+import org.springframework.social.instagram.api.Relationship.OutgoingStatus;
+
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,11 +13,6 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-
-import org.springframework.social.instagram.api.Relationship.IncomingStatus;
-import org.springframework.social.instagram.api.Relationship.OutgoingStatus;
-
-import java.io.IOException;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 public class RelationshipMixin {

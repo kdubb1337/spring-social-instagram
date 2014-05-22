@@ -1,9 +1,8 @@
 package org.springframework.social.instagram.api.impl;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.social.instagram.api.Caption;
 import org.springframework.social.instagram.api.CommentsInfo;
@@ -13,9 +12,10 @@ import org.springframework.social.instagram.api.LikesInfo;
 import org.springframework.social.instagram.api.Location;
 import org.springframework.social.instagram.api.Video;
 
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 abstract class MediaMixin {

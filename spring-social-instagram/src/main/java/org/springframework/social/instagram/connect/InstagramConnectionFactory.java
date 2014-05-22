@@ -8,5 +8,4 @@ public class InstagramConnectionFactory extends OAuth2ConnectionFactory<Instagra
 	public InstagramConnectionFactory(String clientId, String clientSecret) {
 		super("instagram", new InstagramServiceProvider(clientId, clientSecret), new InstagramAdapter());
 	}
-	
 }
