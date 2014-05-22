@@ -26,6 +26,7 @@ public class InstagramAdapter implements ApiAdapter<Instagram> {
 		InstagramProfile profile = instagram.userOperations().getUser();
 		values.setProviderUserId(profile.getId());
 		values.setDisplayName(profile.getUsername());
+		values.setProfileUrl("http://instagram.com/" + profile.getUsername());
 		values.setImageUrl(profile.getProfilePictureUrl());
 	}
 
