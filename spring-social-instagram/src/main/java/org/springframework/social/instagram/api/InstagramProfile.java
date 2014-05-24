@@ -1,5 +1,6 @@
 package org.springframework.social.instagram.api;
 
+import java.util.HashMap;
 import java.util.Map;
 
 public class InstagramProfile {
@@ -19,6 +20,10 @@ public class InstagramProfile {
 		this.username = username;
 		this.fullName = fullName;
 		this.profilePictureUrl = profilePictureUrl;
+		
+		if(counts == null)
+			counts = new HashMap<String, Integer>();
+			
 		this.counts = counts;
 	}
 	
@@ -42,15 +47,15 @@ public class InstagramProfile {
 		return counts;
 	}	
 	
-	public int getMediaCount() {
+	public Integer getMediaCount() {
 	    return counts.get("media");
 	}
 	
-	public int getFollowsCount() {
+	public Integer getFollowsCount() {
 	    return counts.get("follows");
 	}
 	
-    public int getFollowedBy() {
+    public Integer getFollowedBy() {
         return counts.get("followed_by");
     }
 
